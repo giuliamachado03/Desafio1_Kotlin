@@ -1,8 +1,7 @@
-
-class DigitalHouseManager( var listaAlunos : ArrayList<Aluno>,
-                           var listaProfessores : ArrayList<Professor>,
-                           var listaCursos : ArrayList<Curso>,
-                           var listaMatriculas : ArrayList<Matricula>) {
+class DigitalHouseManager(var listaAlunos: ArrayList<Aluno> ,
+                          var listaProfessores: ArrayList<Professor> ,
+                          var listaCursos: ArrayList<Curso> ,
+                          var listaMatriculas: ArrayList<Matricula>) {
 
     fun registrarCurso(curso: Curso) {
         registrarCurso(curso)
@@ -21,5 +20,26 @@ class DigitalHouseManager( var listaAlunos : ArrayList<Aluno>,
         registrarProfessorAdjunto(professorAdjunto)
         listaProfessores.add(professorAdjunto)
     }
+
+    fun registrarProfessorTitular(professorTitular: ProfessorTitular) {
+        registrarProfessorTitular(professorTitular)
+        listaProfessores.add(professorTitular)
+    }
+
+    fun excluirProfessor(codigo: Int) {
+        for (codigo in listaProfessores) {
+            if (codigo == codigo) {
+                listaProfessores.remove(codigo)
+            }
+
+        }
+    }
+
+    fun registrarAluno(aluno: Aluno){
+        registrarAluno(aluno)
+        listaAlunos.add(aluno)
+    }
+
+
 
 }
