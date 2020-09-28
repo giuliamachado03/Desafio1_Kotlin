@@ -35,11 +35,10 @@ class DigitalHouseManager(var listaAlunos: ArrayList<Aluno> ,
         }
     }
 
-    fun registrarAluno(aluno: Aluno){
+    fun registrarAluno(aluno: Aluno) {
         registrarAluno(aluno)
         listaAlunos.add(aluno)
     }
-
 
 
 }

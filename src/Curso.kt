@@ -1,21 +1,29 @@
-data class Curso (var nome : String ,
-             var codigo : Int ,
-             var professorTitular: ProfessorTitular ,
-             var professorAdjunto: ProfessorAdjunto ,
-             var qtdMaxAlunos : Int ,
-             var listaAlunosMatriculados : ArrayList<Aluno>) {
+data class Curso(var nome: String ,
+                 var codigo: Int ,
+                 var professorTitular: ProfessorTitular ,
+                 var professorAdjunto: ProfessorAdjunto ,
+                 var qtdMaxAlunos: Int ,
+                 var listaAlunosMatriculados: ArrayList<Aluno>) {
 
-    fun adicionarUmAluno(umAluno: Aluno): Boolean {
+    fun adicionarUmAluno(umAluno: Aluno): Any {
 
-        listaAlunosMatriculados.add(umAluno)
 
-        val listaAlunoAtualizada = listaAlunosMatriculados.size
-
-        return if (listaAlunoAtualizada >= qtdMaxAlunos) {
+        return if (listaAlunosMatriculados.contains(umAluno)) {
             return false
+        } else if (listaAlunosMatriculados.size <= qtdMaxAlunos) {
+            listaAlunosMatriculados.add(umAluno)
+            return true
         } else {
-            true
         }
+
+        fun excluirAluno(umAluno: Aluno) {}
     }
-    fun excluirAluno (umAluno: Aluno){}
 }
+
+
+
+
+
+
+
+
