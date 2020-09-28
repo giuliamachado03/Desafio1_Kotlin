@@ -7,7 +7,6 @@ data class Curso(var nome: String ,
 
     fun adicionarUmAluno(umAluno: Aluno): Any {
 
-
         return if (listaAlunosMatriculados.contains(umAluno)) {
             return false
         } else if (listaAlunosMatriculados.size <= qtdMaxAlunos) {
@@ -15,10 +14,20 @@ data class Curso(var nome: String ,
             return true
         } else {
         }
+    }
 
-        fun excluirAluno(umAluno: Aluno) {}
+    fun excluirAluno(umAluno: Aluno): Boolean {
+
+        if (listaAlunosMatriculados.contains(umAluno)) {
+            listaAlunosMatriculados.remove(umAluno)
+            return true
+        } else {
+            return false
+        }
     }
 }
+
+
 
 
 

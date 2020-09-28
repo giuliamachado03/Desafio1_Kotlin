@@ -18,12 +18,24 @@ fun main() {
 
 
     // Teste 1 - Método adiconarUmAluno da Classe Curso
+    // Considerando val listaAlunosMatriculados1 = arrayListOf<Aluno>(aluno1,aluno2,aluno3)
     // print(curso1.adicionarUmAluno(aluno1)) - false
     // print(curso1.adicionarUmAluno(aluno2)) - false
-    // print(curso1.adicionarUmAluno(aluno3)) - false
+    // print(curso1.adicionarUmAluno(aluno3))
     //print(curso1.adicionarUmAluno(aluno4)) - true
     //print(curso1.adicionarUmAluno(aluno5)) - true
     //println(listaAlunosMatriculados1) - conferência
+
+   // Teste 2 - Método excluirAluno
+    // Considerando val listaAlunosMatriculados1 = arrayListOf<Aluno>(aluno1,aluno2,aluno3)
+    // print(curso1.excluirAluno(aluno5)) - false
+    // print(curso1.excluirAluno(aluno4)) - false
+    // print(curso1.excluirAluno(aluno3)) - true
+    // print(curso1.excluirAluno(aluno2)) - true
+    // print(curso1.excluirAluno(aluno1)) - true
+
+
+    print(curso1.excluirAluno(aluno1))
 }
 
 
