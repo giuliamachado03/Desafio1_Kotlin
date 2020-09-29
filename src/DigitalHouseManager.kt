@@ -1,17 +1,16 @@
 class DigitalHouseManager {
-        var listaAlunos: ArrayList<Aluno> = arrayListOf()
-        var listaProfessores: ArrayList<Professor> = arrayListOf()
-        var listaCursos: ArrayList<Curso> = arrayListOf()
-        var listaMatriculas: ArrayList<Matricula> = arrayListOf()
+        var listaAlunos = arrayListOf<Aluno>()
+        var listaProfessores = arrayListOf<Professor>()
+        var listaCursos = arrayListOf<Curso>()
+        var listaMatriculas= arrayListOf<Matricula>()
 
 
-    fun registrarCurso(nome: String , codigo: Int , qtdMaxAlunos: Int) {
-        val novoCurso = Curso()
-        novoCurso.nome = nome
-        novoCurso.codigo = codigo
-        novoCurso.qtdMaxAlunos = qtdMaxAlunos
+    fun registrarCurso(curso: Curso) {
+        curso.nome
+        curso.codigoDoCurso
+        curso.qtdMaxAlunos
 
-        listaAlunos.add(novoCurso)
+        listaAlunos.add(curso)
 
     }
 
@@ -46,6 +45,10 @@ class DigitalHouseManager {
         registrarAluno(aluno)
         listaAlunos.add(aluno)
     }
+
+}
+
+private fun <E> ArrayList<E>.add(element: Curso) {
 
 }
 

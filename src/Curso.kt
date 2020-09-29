@@ -4,15 +4,15 @@
      var professorAdjunto = arrayListOf<ProfessorAdjunto>()
      var listaAlunosMatriculados = arrayListOf<Aluno>()
 
-     fun adicionarUmAluno(umAluno: Aluno): Any {
+     fun adicionarUmAluno(umAluno: Aluno) : Boolean{
 
-         return if (listaAlunosMatriculados.contains(umAluno)) {
-             return false
-         } else if (listaAlunosMatriculados.size <= qtdMaxAlunos) {
+         if (!listaAlunosMatriculados.contains(umAluno) && listaAlunosMatriculados.size < qtdMaxAlunos){
              listaAlunosMatriculados.add(umAluno)
              return true
          } else {
+             return false
          }
+
      }
 
      fun excluirAluno(umAluno: Aluno): Boolean {
@@ -25,6 +25,9 @@
          }
      }
  }
+
+
+
 
 
 
