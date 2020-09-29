@@ -1,9 +1,8 @@
-data class Curso(var nome: String ,
-                 var codigo: Int ,
-                 var professorTitular: ProfessorTitular ,
-                 var professorAdjunto: ProfessorAdjunto ,
-                 var qtdMaxAlunos: Int ,
-                 var listaAlunosMatriculados: ArrayList<Aluno>) {
+ class Curso (var nome: String, var codigoDoCurso: Int, var qtdMaxAlunos: Int ) {
+
+    var professorTitular = arrayListOf<ProfessorTitular>()
+    var professorAdjunto = arrayListOf<ProfessorAdjunto>()
+    var listaAlunosMatriculados = arrayListOf<Aluno>()
 
     fun adicionarUmAluno(umAluno: Aluno): Any {
 

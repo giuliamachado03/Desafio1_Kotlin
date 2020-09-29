@@ -1,11 +1,18 @@
-class DigitalHouseManager(var listaAlunos: ArrayList<Aluno> ,
-                          var listaProfessores: ArrayList<Professor> ,
-                          var listaCursos: ArrayList<Curso> ,
-                          var listaMatriculas: ArrayList<Matricula>) {
+class DigitalHouseManager {
+        var listaAlunos: ArrayList<Aluno> = arrayListOf()
+        var listaProfessores: ArrayList<Professor> = arrayListOf()
+        var listaCursos: ArrayList<Curso> = arrayListOf()
+        var listaMatriculas: ArrayList<Matricula> = arrayListOf()
 
-    fun registrarCurso(curso: Curso) {
-        registrarCurso(curso)
-        listaCursos.add(curso)
+
+    fun registrarCurso(nome: String , codigo: Int , qtdMaxAlunos: Int) {
+        val novoCurso = Curso()
+        novoCurso.nome = nome
+        novoCurso.codigo = codigo
+        novoCurso.qtdMaxAlunos = qtdMaxAlunos
+
+        listaAlunos.add(novoCurso)
+
     }
 
     fun excluirCurso(codigo: Int) {
@@ -40,5 +47,6 @@ class DigitalHouseManager(var listaAlunos: ArrayList<Aluno> ,
         listaAlunos.add(aluno)
     }
 
-
 }
+
+
