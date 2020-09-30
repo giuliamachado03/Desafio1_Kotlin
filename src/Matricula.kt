@@ -1,5 +1,6 @@
-import java.time.LocalDate
+
+import java.time.LocalDateTime
 
 data class Matricula (var aluno: Aluno , var curso: Curso) {
-    val dataDeMatricula = LocalDate.now()
+    val dataDeMatricula = LocalDateTime.now()
 }
