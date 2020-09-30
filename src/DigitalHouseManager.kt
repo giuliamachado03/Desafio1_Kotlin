@@ -6,8 +6,8 @@ class DigitalHouseManager {
     var listaMatriculas = arrayListOf<Matricula>()
 
 
-    fun registrarCurso(nome : String, codigoDoCurso : Int, qtdMaxAlunos : Int) {
-        val novoCurso = Curso(nome, codigoDoCurso, qtdMaxAlunos)
+    fun registrarCurso(nome: String , codigoDoCurso: Int , qtdMaxAlunos: Int) {
+        val novoCurso = Curso(nome , codigoDoCurso , qtdMaxAlunos)
         listaAlunos.add(novoCurso)
 
     }
@@ -20,32 +20,40 @@ class DigitalHouseManager {
             }
         }
 
-        fun registrarProfessorAdjunto(nome: String ,
-                                      sobrenome: String ,
-                                      tempoDeCasa: Int ,
-                                      codigoDoProfessor: Int ,
-                                      qtdHorasMonitoria : Double) {
-            val novoProfessorAdjunto = ProfessorAdjunto(nome, sobrenome, tempoDeCasa, codigoDoProfessor, qtdHorasMonitoria)
+        fun registrarProfessorAdjunto(
+                nome: String ,
+                sobrenome: String ,
+                tempoDeCasa: Int ,
+                codigoDoProfessor: Int ,
+                qtdHorasMonitoria: Double ,
+        ) {
+            val novoProfessorAdjunto = ProfessorAdjunto(nome , sobrenome , tempoDeCasa , codigoDoProfessor , qtdHorasMonitoria)
             listaProfessores.add(novoProfessorAdjunto)
         }
 
-        fun registrarProfessorTitular(professorTitular: ProfessorTitular) {
-            registrarProfessorTitular(professorTitular)
-            listaProfessores.add(professorTitular)
+        fun registrarProfessorTitular(
+                nome: String ,
+                sobrenome: String ,
+                tempoDeCasa: Int ,
+                codigoDoProfessor: Int ,
+                especialidade: String ,
+        ) {
+            val novoProfessorTitular = ProfessorTitular(nome , sobrenome , tempoDeCasa , codigoDoProfessor , especialidade)
+            listaProfessores.add(novoProfessorTitular)
         }
 
-        fun excluirProfessor(codigo: Int) {
-            for (codigo in listaProfessores) {
-                if (codigo == codigo) {
-                    listaProfessores.remove(codigo)
+        fun excluirProfessor(codigoDoProfessor: Int) {
+            for (professor in listaProfessores) {
+                if (codigoDoProfessor == professor.codigoDoProfessor) {
+                    listaProfessores.remove(professor)
                 }
 
             }
         }
 
-        fun registrarAluno(aluno: Aluno) {
-            registrarAluno(aluno)
-            listaAlunos.add(aluno)
+        fun matricularAluno(nome: String, sobrenome : String, codigoDoAluno: Int) {
+            val novoAlunoMatriculado = Aluno(nome, sobrenome, codigoDoAluno)
+            listaAlunos.add(novoAlunoMatriculado)
         }
 
     }
