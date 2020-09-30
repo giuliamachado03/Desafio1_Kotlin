@@ -1,55 +1,54 @@
 class DigitalHouseManager {
-        var listaAlunos = arrayListOf<Aluno>()
-        var listaProfessores = arrayListOf<Professor>()
-        var listaCursos = arrayListOf<Curso>()
-        var listaMatriculas= arrayListOf<Matricula>()
+
+    var listaAlunos = arrayListOf<Aluno>()
+    var listaProfessores = arrayListOf<Professor>()
+    var listaCursos = arrayListOf<Curso>()
+    var listaMatriculas = arrayListOf<Matricula>()
 
 
-    fun registrarCurso(curso: Curso) {
-        curso.nome
-        curso.codigoDoCurso
-        curso.qtdMaxAlunos
-
-        listaAlunos.add(curso)
+    fun registrarCurso(nome : String, codigoDoCurso : Int, qtdMaxAlunos : Int) {
+        val novoCurso = Curso(nome, codigoDoCurso, qtdMaxAlunos)
+        listaAlunos.add(novoCurso)
 
     }
 
-    fun excluirCurso(codigo: Int) {
-        for (codigo in listaCursos) {
-            if (codigo == codigo) {
-                listaCursos.remove(codigo)
+    fun excluirCurso(codigoDoCurso: Int) {
+        for (curso in listaCursos) {
+            if (codigoDoCurso == curso.codigoDoCurso) {
+                listaCursos.remove(curso)
+                break
             }
         }
-    }
 
-    fun registrarProfessorAdjunto(professorAdjunto: ProfessorAdjunto) {
-        registrarProfessorAdjunto(professorAdjunto)
-        listaProfessores.add(professorAdjunto)
-    }
-
-    fun registrarProfessorTitular(professorTitular: ProfessorTitular) {
-        registrarProfessorTitular(professorTitular)
-        listaProfessores.add(professorTitular)
-    }
-
-    fun excluirProfessor(codigo: Int) {
-        for (codigo in listaProfessores) {
-            if (codigo == codigo) {
-                listaProfessores.remove(codigo)
-            }
-
+        fun registrarProfessorAdjunto(nome : String, sobrenome : String, codigoProfessor : Int, qtdDeHoras : Int) {
+            val professorAdjunto = ProfessorAdjunto(nome, sobrenome, qtdDeHoras)
+            listaProfessores.add(professorAdjunto)
         }
+
+        fun registrarProfessorTitular(professorTitular: ProfessorTitular) {
+            registrarProfessorTitular(professorTitular)
+            listaProfessores.add(professorTitular)
+        }
+
+        fun excluirProfessor(codigo: Int) {
+            for (codigo in listaProfessores) {
+                if (codigo == codigo) {
+                    listaProfessores.remove(codigo)
+                }
+
+            }
+        }
+
+        fun registrarAluno(aluno: Aluno) {
+            registrarAluno(aluno)
+            listaAlunos.add(aluno)
+        }
+
     }
 
-    fun registrarAluno(aluno: Aluno) {
-        registrarAluno(aluno)
-        listaAlunos.add(aluno)
+    private fun Any.add(element: Curso) {
+
     }
-
-}
-
-private fun <E> ArrayList<E>.add(element: Curso) {
-
 }
 
 
