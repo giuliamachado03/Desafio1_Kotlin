@@ -20,8 +20,7 @@ class DigitalHouseManager {
             }
         }
 
-        fun registrarProfessorAdjunto(nome : String, sobrenome : String, codigoProfessor : Int, qtdDeHoras : Int) {
-            val professorAdjunto = ProfessorAdjunto(nome, sobrenome, qtdDeHoras)
+        fun registrarProfessorAdjunto(professorAdjunto: ProfessorAdjunto) {
             listaProfessores.add(professorAdjunto)
         }
 
