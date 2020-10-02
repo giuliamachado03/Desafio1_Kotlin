@@ -76,6 +76,24 @@ class DigitalHouseManager {
 
         }
 
+        fun alocarProfessores(codigoDoCurso: Int, codigoProfessorTitular: Int, codigoProfessorAdjunto: Int) {
+
+            listaCursos.forEach{ it ->
+
+                if (codigoDoCurso == it.codigoDoCurso){
+                    for (professor in listaProfessores){
+                        if (codigoProfessorAdjunto == professor.codigoDoProfessor){
+                            it.professorAdjunto
+                            if (codigoProfessorTitular == professor.codigoDoProfessor){
+                                it.professorTitular
+                            }
+                            }
+                        }
+                    }
+                }
+
+        }
+
         fun Any.add(element: Curso) = Unit
     }
 }
