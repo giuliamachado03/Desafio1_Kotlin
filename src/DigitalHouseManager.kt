@@ -8,7 +8,7 @@ class DigitalHouseManager {
 
     fun registrarCurso(nome: String , codigoDoCurso: Int , qtdMaxAlunos: Int) {
         val novoCurso = Curso(nome , codigoDoCurso , qtdMaxAlunos)
-        listaAlunos.add(novoCurso)
+        listaCursos.add(novoCurso)
 
     }
 
@@ -46,20 +46,37 @@ class DigitalHouseManager {
             for (professor in listaProfessores) {
                 if (codigoDoProfessor == professor.codigoDoProfessor) {
                     listaProfessores.remove(professor)
+                    break
                 }
 
             }
         }
 
-        fun matricularAluno(nome: String, sobrenome : String, codigoDoAluno: Int) {
-            val novoAlunoMatriculado = Aluno(nome, sobrenome, codigoDoAluno)
+        fun matricularAluno(nome: String , sobrenome: String , codigoDoAluno: Int) {
+            val novoAlunoMatriculado = Aluno(nome , sobrenome , codigoDoAluno)
             listaAlunos.add(novoAlunoMatriculado)
         }
 
-    }
+        fun matricularAluno(codigoAluno: Int , codigoDoCurso: Int) {
 
-    private fun Any.add(element: Curso) {
+            for (aluno in listaAlunos) {
+                if (codigoAluno == aluno.codigoAluno) {
+                    for (curso in listaCursos) {
+                        if (codigoDoCurso == curso.codigoDoCurso) {
+                            curso.adicionarUmAluno(aluno)
+                            listaMatriculas.add(Matricula(aluno , curso))
+                            println("Matricula realizada!")
+                        } else {
+                            println("Não foi possível realizar a matricula. Não há mais vagas.")
+                        }
+                    }
+                }
 
+            }
+
+        }
+
+        fun Any.add(element: Curso) = Unit
     }
 }
 
